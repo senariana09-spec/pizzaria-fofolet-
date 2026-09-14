@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Página Sobre</title>
+
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        html,
+        body {
+
+            width: 100%;
+
+            min-height: 100%;
+
+        }
+
+
+
+        body {
+
+                font-family:
+        "Comic Sans MS",
+        "Trebuchet MS",
+        sans-serif;
+
+            background: #fff1b8;
+
+            color: #4b3027;
+
+        }
+
+
+
+        /* =========================================
+           CABEÇALHO
+        ========================================= */
+
+        .cabecalho {
+
+            position: relative;
+
+            width: 100%;
+
+            height: 85px;
+
+            background: #4b3027;
+
+            border-top: 3px solid #3b2923;
+
+            z-index: 10;
+
+        }
+
+
+
+        /* =========================================
+           FAIXA AMARELA ATRÁS DAS ABAS
+           evita aparecer branco quando a aba desce
+        ========================================= */
+
+        .faixa-amarela {
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -25px;
+
+            width: 100%;
+
+            height: 25px;
+
+            background: #fff1b8;
+
+            z-index: 1;
+
+        }
+
+
+
+        /* =========================================
+           LOGO
+        ========================================= */
+
+        .logo {
+
+            position: absolute;
+
+            left: 20px;
+
+            top: 10px;
+
+            width: 65px;
+
+            height: 65px;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            z-index: 5;
+
+        }
+
+
+
+        .logo img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+        }
+
+
+
+        /* =========================================
+           ABAS
+        ========================================= */
+
+        .abas {
+
+            position: absolute;
+
+            left: 157px;
+
+            bottom: 0;
+
+            display: flex;
+
+            gap: 26px;
+
+            align-items: flex-end;
+
+            z-index: 10;
+
+        }
+
+
+
+        .aba {
+
+            width: 126px;
+
+            height: 43px;
+
+            background: white;
+
+            border: none;
+
+            border-radius: 20px 20px 0 0;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+            color: #4b3027;
+
+            transition: 0.2s;
+
+        }
+
+
+
+        .aba:hover {
+
+            background: #f3f3f3;
+
+            transform: translateY(7px);
+
+        }
+
+
+
+        /* =========================================
+           PESQUISA
+        ========================================= */
+
+        .pesquisa {
+
+            position: absolute;
+
+            right: 126px;
+
+            top: 19px;
+
+            width: 405px;
+
+            height: 49px;
+
+            background: white;
+
+            border-radius: 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            z-index: 5;
+
+        }
+
+
+
+        .icone-pesquisa {
+
+            margin-left: 20px;
+
+            width: 35px;
+
+            height: 40px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+
+        .icone-pesquisa img {
+
+            width: 30px;
+
+            height: 40px;
+
+            object-fit: contain;
+
+        }
+
+
+
+        .pesquisa input {
+
+            width: 330px;
+
+            height: 100%;
+
+            margin-left: 14px;
+
+            border: none;
+
+            outline: none;
+
+            background: transparent;
+
+            font-size: 18px;
+
+        }
+
+
+
+        /* =========================================
+           ÁREA PRINCIPAL
+        ========================================= */
+
+        .conteudo {
+
+            position: relative;
+
+            width: 100%;
+
+            min-height: calc(100vh - 85px);
+
+            background: #fff1b8;
+
+            padding-top: 28px;
+
+            padding-bottom: 45px;
+
+            overflow: hidden;
+
+        }
+
+
+
+        /* =========================================
+           TÍTULO SOBRE O SITE
+        ========================================= */
+
+        .titulo-sobre {
+
+            width: 440px;
+
+            background: white;
+
+            border-radius: 0 15px 15px 0;
+
+            padding: 14px 30px;
+
+            font-size: 31px;
+
+            text-align: center;
+
+            color: #4b3027;
+
+            margin-bottom: 25px;
+
+        }
+
+
+
+        /* =========================================
+           PARTE SUPERIOR
+        ========================================= */
+
+        .parte-superior {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+
+            gap: 70px;
+
+            padding: 0 55px 0 15px;
+
+            position: relative;
+
+            z-index: 3;
+
+        }
+
+
+
+        /* =========================================
+           CAIXA AZUL MAIOR
+        ========================================= */
+
+        .caixa-sobre {
+
+            position: relative;
+
+            width: 44%;
+
+            min-height: 465px;
+
+            background: #bcd8ea;
+
+            border-radius: 18px;
+
+            padding: 26px 28px 24px 28px;
+
+            font-size: 16px;
+
+            line-height: 1.47;
+
+            font-weight: bold;
+
+            text-align: left;
+
+        }
+
+
+
+        /* faz os parágrafos preencherem melhor
+           a caixa inteira */
+
+        .caixa-sobre p {
+
+            margin-bottom: 11px;
+
+        }
+
+
+
+        .caixa-sobre p:last-of-type {
+
+            margin-bottom: 0;
+
+        }
+
+
+
+        /* =========================================
+           GATO PRESO NA PONTA DA CAIXA AZUL
+        ========================================= */
+
+        .gato-caixa {
+
+            position: absolute;
+
+            width: 115px;
+
+            right: -54px;
+
+            bottom: -22px;
+
+            z-index: 10;
+
+            pointer-events: none;
+
+        }
+
+
+
+        /* =========================================
+           DESENVOLVEDORES
+        ========================================= */
+
+        .desenvolvedores {
+
+            width: 48%;
+
+            position: relative;
+
+        }
+
+
+
+        .titulo-desenvolvedores {
+
+            background: white;
+
+            width: 390px;
+
+            padding: 14px 20px;
+
+            border-radius: 0 0 0 20px;
+
+            font-size: 31px;
+
+            text-align: center;
+
+            margin-top: -77px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .dev {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 21px;
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+        }
+
+
+
+        .foto-dev {
+
+            width: 88px;
+
+            height: 88px;
+
+            background: white;
+
+            border-radius: 18px;
+
+            object-fit: contain;
+
+            padding: 4px;
+
+        }
+
+
+
+        .ana {
+
+            justify-content: flex-end;
+
+        }
+
+
+
+        .ariana {
+
+            margin-left: 20px;
+
+        }
+
+
+
+        .arthur-m {
+
+            justify-content: flex-end;
+
+        }
+
+
+
+        .arthur-s {
+
+            margin-left: 20px;
+
+        }
+
+
+
+        .eduardo {
+
+            justify-content: flex-end;
+
+        }
+
+
+
+        /* =========================================
+           CARDS INFERIORES
+        ========================================= */
+
+        .cards {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: stretch;
+
+            gap: 45px;
+
+            margin-top: 45px;
+
+            padding: 0 45px;
+
+            position: relative;
+
+            z-index: 3;
+
+        }
+
+
+
+        .card {
+
+            width: 29%;
+
+            min-height: 310px;
+
+            background: #bcd8ea;
+
+            border-radius: 18px;
+
+            padding: 22px 18px 20px;
+
+            font-size: 15px;
+
+            line-height: 1.35;
+
+            font-weight: bold;
+
+        }
+
+
+
+        .card h2 {
+
+            text-align: center;
+
+            font-size: 22px;
+
+            margin-bottom: 10px;
+
+            color: #4b3027;
+
+        }
+
+
+
+        .card p {
+
+            margin-bottom: 8px;
+
+        }
+
+
+
+        /* =========================================
+           DECORAÇÃO NO FUNDO
+        ========================================= */
+
+        .decoracao {
+
+            position: absolute;
+
+            right: -150px;
+
+            bottom: -70px;
+
+            width: 700px;
+
+            opacity: 0.18;
+
+            pointer-events: none;
+
+            z-index: 1;
+
+        }
+
+
+
+        /* =========================================
+           RESPONSIVIDADE
+        ========================================= */
+
+        @media (max-width: 1000px) {
+
+            .pesquisa {
+
+                display: none;
+
+            }
+
+
+            .abas {
+
+                left: 110px;
+
+                gap: 10px;
+
+            }
+
+
+            .aba {
+
+                width: 90px;
+
+            }
+
+
+            .parte-superior {
+
+                flex-direction: column;
+
+                padding-right: 20px;
+
+            }
+
+
+            .caixa-sobre,
+            .desenvolvedores {
+
+                width: 100%;
+
+            }
+
+
+            .titulo-desenvolvedores {
+
+                margin-top: 0;
+
+            }
+
+
+            .cards {
+
+                flex-direction: column;
+
+            }
+
+
+            .card {
+
+                width: 100%;
+
+            }
+
+
+            .gato-caixa {
+
+                width: 90px;
+
+                right: -15px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <!-- =========================================
+         CABEÇALHO
+    ========================================= -->
+
+    <header class="cabecalho">
+
+
+        <!-- fundo amarelo atrás das abas -->
+
+        <div class="faixa-amarela"></div>
+
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <img src="kit.png" alt="Logo">
+
+        </div>
+
+
+
+        <!-- ABAS -->
+
+
+        <nav class="abas">
+
+<a href="http://127.0.0.1:5500/feirabase.html">
+            <button class="aba">Home</button>
+                                            </a>
+<a href="https://chatgpt.com/c/6a99a11c-5e80-83e9-aec6-9da1fc1c75d1">                                         
+            <button class="aba">Sobre</button>
+                                        </a> 
+            <button class="aba">Turmas</button>
+
+            <button class="aba">Avalie</button>
+
+        </nav>
+
+
+
+        <!-- PESQUISA -->
+
+        <div class="pesquisa">
+
+            <div class="icone-pesquisa">
+
+                <img src="lupa2.png" alt="Pesquisar">
+
+            </div>
+
+
+            <input
+                type="text"
+                aria-label="Pesquisar"
+            >
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =========================================
+         CONTEÚDO
+    ========================================= -->
+
+    <main class="conteudo">
+
+
+
+        <!-- DECORAÇÃO DO FUNDO -->
+
+        <img
+            src="ChatGPT_Image_21_de_ago._de_2026__13_31_48-removebg-preview.png"
+            alt=""
+            class="decoracao"
+        >
+
+
+
+        <!-- TÍTULO -->
+
+        <h1 class="titulo-sobre">
+
+            Sobre o site
+
+        </h1>
+
+
+
+        <!-- =====================================
+             PARTE SUPERIOR
+        ====================================== -->
+
+        <section class="parte-superior">
+
+
+
+            <!-- =================================
+                 CAIXA SOBRE O SITE
+            ================================== -->
+
+            <div class="caixa-sobre">
+
+
+                <p>
+                    Este site foi desenvolvido como parte de um projeto
+                    para a Feira Tecnológica da ETEC MCM, com o objetivo
+                    de criar uma galeria digital de desenhos,
+                    proporcionando a criatividade e a expressão artística
+                    dos alunos.
+                </p>
+
+
+                <p>
+                    Além disso, o projeto busca unir arte e tecnologia,
+                    mostrando como ferramentas digitais podem ser
+                    utilizadas para apresentar e compartilhar produções
+                    de uma maneira moderna e acessível.
+                </p>
+
+
+                <p>
+                    A ideia é proporcionar um espaço virtual onde os
+                    trabalhos dos alunos possam ser apresentados,
+                    organizados e apreciados de forma simples e interativa.
+                </p>
+
+
+                <p>
+                    Obrigada pela visita, esperamos que aproveite!!
+                </p>
+
+
+
+                <!-- =================================
+                     GATO NA PONTA DA CAIXA
+
+                     TROQUE "mascote.png"
+                     PELO NOME DA SUA IMAGEM
+                ================================== -->
+
+                <img
+                    src="mascote.png"
+                    alt="Mascote"
+                    class="gato-caixa"
+                >
+
+
+            </div>
+
+            <!-- =================================
+                 DESENVOLVEDORES
+            ================================== -->
+
+            <div class="desenvolvedores">
+
+
+                <h1 class="titulo-desenvolvedores">
+
+                    Desenvolvedores
+
+                </h1>
+
+
+
+                <!-- ANA -->
+
+                <div class="dev ana">
+
+                    <span>Ana Domingues</span>
+
+                    <img
+                        src="ana.png"
+                        alt="Desenho Ana"
+                        class="foto-dev"
+                    >
+
+                </div>
+
+
+
+                <!-- ARIANA -->
+
+                <div class="dev ariana">
+
+                    <img
+                        src="ariana.png"
+                        alt="Desenho Ariana"
+                        class="foto-dev"
+                    >
+
+                    <span>Ariana Sena</span>
+
+                </div>
+
+
+
+                <!-- ARTHUR M -->
+
+                <div class="dev arthur-m">
+
+                    <span>Arthur M.</span>
+
+                    <img
+                        src="arthur-m.png"
+                        alt="Desenho Arthur M."
+                        class="foto-dev"
+                    >
+
+                </div>
+
+
+
+                <!-- ARTHUR S -->
+
+                <div class="dev arthur-s">
+
+                    <img
+                        src="arthur-s.png"
+                        alt="Desenho Arthur S."
+                        class="foto-dev"
+                    >
+
+                    <span>Arthur S.</span>
+
+                </div>
+
+
+
+                <!-- EDUARDO -->
+
+                <div class="dev eduardo">
+
+                    <span>Eduardo Motta</span>
+
+                    <img
+                        src="eduardo.png"
+                        alt="Desenho Eduardo"
+                        class="foto-dev"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             CARDS DE BAIXO
+        ====================================== -->
+
+        <section class="cards">
+
+
+
+            <!-- OBJETIVO -->
+
+            <div class="card">
+
+                <h2>Objetivo</h2>
+
+
+                <p>
+                    O Miauseun foi criado com o objetivo de tornar
+                    a arte mais acessível, aproximando pessoas por
+                    meio de seus desenhos e permitindo que todos
+                    possam compartilhar e conhecer diferentes
+                    formas de expressão artística.
+                </p>
+
+
+                <p>
+                    A plataforma busca criar um espaço de interação
+                    e conexão entre artistas, valorizando a
+                    criatividade de cada pessoa.
+                </p>
+
+            </div>
+
+
+
+            <!-- ODS -->
+
+            <div class="card">
+
+                <h2>ODS utilizadas</h2>
+
+
+                <p>
+                    A ODS 4 está relacionada ao nosso projeto porque
+                    o Miauseun incentiva a aprendizagem e a expressão
+                    artística, permitindo que as pessoas compartilhem
+                    seus desenhos, conheçam diferentes estilos e
+                    aprendam umas com as outras.
+                </p>
+
+
+                <p>
+                    A ODS 11 se relaciona ao projeto por promover uma
+                    comunidade mais conectada e inclusiva, utilizando
+                    a tecnologia para aproximar as pessoas e criar um
+                    espaço onde todos possam compartilhar e valorizar.
+                </p>
+
+            </div>
+
+
+
+            <!-- PROBLEMA -->
+
+            <div class="card">
+
+                <h2>
+                    Problema e<br>
+                    justificativa
+                </h2>
+
+
+                <p>
+                    Atualmente, com o crescimento da tecnologia e da
+                    inteligência artificial, a arte feita por pessoas
+                    pode acabar sendo menos valorizada.
+                </p>
+
+
+                <p>
+                    O Miauseun busca ajudar a resolver esse problema,
+                    criando um espaço digital para compartilhar,
+                    conhecer e valorizar a arte real.
+                </p>
+
+
+                <p>
+                    Além de utilizar a tecnologia como ferramenta de
+                    acesso e divulgação, o projeto procura valorizar
+                    a arte real e o trabalho manual, mostrando que a
+                    tecnologia pode servir para aproximar as pessoas
+                    da arte, e não para substituí-la.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>
